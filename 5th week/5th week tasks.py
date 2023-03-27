@@ -40,6 +40,7 @@ ispalindrome(str)
 
 # Task 4
 # Write a function that takes a list of integers as a parameter and returns a list of only the even integers in the original list
+
 def evenInt (l:list):
     newlist = []
     for integer in l:
@@ -83,15 +84,53 @@ intProduct([1,2,3])
 # Task 7
 # Write a function that takes a dictionary as a parameter and returns a list of all the keys in the dictionary that have an even value
 
-# def dictVals (**kwargs):
-#     keyList = []
-#     key = str(kwargs.get(key))
-#     value = str(kwargs.get(value))
-#     for value in kwargs:
-#         if (value % 2) == 0:
-#             keyList.append(key)
-#         else: break
-#     return print(keyList)
+def dictEvenVals (dict):
+    keyList = []
+    for keys, values in dict.items():
+        if values % 2 == 0:
+            keyList.append(keys)
+    return print(keyList)
 
-# dictVals(arg = "4", arg1 = "5")
+dictEvenVals({"args1":6, "args2":10, "args3":7})
 
+# Task 8
+# Write a function that takes a list of dictionaries as a parameter and returns a new dictionary that contains the sum of the values for each key in the original dictionaries
+
+def sumOfKeys(dictList:list):
+    sum_dict = dict()
+    for values_dict in dictList:
+        for key, value in values_dict.items():
+            if key in sum_dict:
+                sum = sum_dict.get(key)
+                sum += value
+                sum_dict[key] = sum
+            else: sum_dict[key] = value
+    return sum_dict
+
+dictInput = [{1:20, 2:9, 3:15}, {1:30, 2:8, 3:13}, {1:23, 2:1, 3:7}]
+print(sumOfKeys(dictInput))
+
+# Task 9
+# Write a function that takes a tuple as a parameter and returns a new tuple that has the first and last elements swapped
+
+def elSwapped(tuple1:tuple):
+    tuple1_list = list(tuple1)
+    tuple1_list[0], tuple1_list[len(tuple1_list)-1] = tuple1_list[len(tuple1_list)-1], tuple1_list[0]
+    return tuple(tuple1_list)
+
+tupleInput = (34,24,65,3453,1,234,8)
+print(elSwapped(tupleInput))
+
+# Task 10
+# Write a function that takes a set as a parameter and returns a new set that contains only the elements that are not divisible by 3
+
+def notDivisibleSet(set1:set):
+    newset = set()
+    for element in set1:
+        if element % 3 == 0:
+            continue
+        else: newset.add(element)
+    return newset
+
+setInput = {1,3,5,7,12,13,26,30}
+print(notDivisibleSet(setInput))
