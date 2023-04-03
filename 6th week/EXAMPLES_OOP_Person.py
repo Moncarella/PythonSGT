@@ -29,8 +29,9 @@
 
 # person_obj = Person() # The code above will only print Hello after we assign an object to it
 
-# You can use self like this:
+
 from EXAMPLES_OOP_Date import Date
+from EXAMPLES_Obsolete import Obsolete
 class Person:
 
     species = "Homo sapiens" # You can specify the parameter at the start and then use it for functions

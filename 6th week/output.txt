@@ -1,0 +1,9 @@
+kjlk
+
+kl;k
+& C:/Users/Monikos-PC/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/Monikos-PC/Desktop/SGT_Python/Practical/GITintro/6th week/EXAMPLES_Input_Output.py"
+& C:/Users/Monikos-PC/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/Monikos-PC/Desktop/SGT_Python/Practical/GITintro/6th week/EXAMPLES_Input_Output.py"
+& C:/Users/Monikos-PC/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/Monikos-PC/Desktop/SGT_Python/Practical/GITintro/6th week/EXAMPLES_Input_Output.py"
+ghjhgj
+& C:/Users/Monikos-PC/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/Monikos-PC/Desktop/SGT_Python/Practical/GITintro/6th week/EXAMPLES_Input_Output.py"
+& C:/Users/Monikos-PC/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/Monikos-PC/Desktop/SGT_Python/Practical/GITintro/6th week/EXAMPLES_Input_Output.py"
