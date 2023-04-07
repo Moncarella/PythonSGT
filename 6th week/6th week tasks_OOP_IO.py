@@ -193,8 +193,8 @@ with open("Persons.json", "w") as f:
     json.dump({"persons":persons},f)
 
 
-Task 9
-Write a Python program that reads a CSV file containing student grades, calculates their average score, and writes the average to a new file
+# Task 9
+# Write a Python program that reads a CSV file containing student grades, calculates their average score, and writes the average to a new file
 with open("Student_grades.csv", "r") as f:
     students_grades = f.readlines()[1:]  # Because we don't need to read the header line
 
