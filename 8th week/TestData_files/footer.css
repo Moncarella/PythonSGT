@@ -1,0 +1,172 @@
+.link__container
+ {
+    overflow: -webkit-paged-x;
+    min-height: 96px;
+    padding-top: 27px;
+    flex: 0 1 25%;
+    padding-bottom: 27px;
+}
+@media screen and (max-width: 1100px){
+    .link__container {
+        flex: 0 1 50%;
+    }
+    .link__container:nth-child(3) ul {
+        border: none!important;
+    }
+    #inner {
+        padding-bottom: 400px;
+    }
+}
+h3.link__container--title {
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: #cccccc;
+}
+#footer .footerleft ul {
+    background-color: transparent;
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 0;
+    line-height: 1.5em;
+    height: 65px;
+    border-left: 1px solid #cccccc;
+    text-align: left;
+}
+#footer .link__container:first-child ul{
+    border: none;
+}
+#footer a {
+    color: #cccccc;
+}
+#footer .mail, #footer .phone {
+    text-decoration: underline;
+}
+.mail::before {
+    font-family: 'fontello';
+    content: '\e80d';
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.phone::before {
+    font-family: 'fontello';
+    content: '\e80c';
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.footerright ul {
+    background-color: transparent;
+    text-align: left;
+   padding-top: 15px;
+}
+.footerright ul li {
+    display: inline-block;
+}
+.footerright ul li a{
+    text-decoration: underline;
+}
+.footerright ul li:nth-child(3){
+    float: right;
+}
+.footerright ul li:nth-child(2){
+    margin-left:35px;
+}
+.footerright--inner {
+    max-width: 1129px;
+    padding-left: 10%;
+    margin-left: auto;
+    padding-right: 10%;
+    margin-right: auto;
+}
+#footer {
+    background: #4A4A4A;
+    /* border-top: 3px solid #57626a; */
+    border-top: 3px solid #2870ae;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #979797;
+    color: #9b9b9b;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    /* height: 50px; */
+    margin-left: -2px;
+    font-size: 14px;
+}
+.footerleft {
+    padding-left: 9%;
+    margin: 0 auto;
+    display: flex;
+    max-width: 1129px;
+    flex-wrap: wrap;
+    padding-right: 11%;
+    min-height: 150px;
+    flex: 1 1 100%;
+    justify-content: space-around;
+}
+.footerright {
+    height: 50px;
+    flex: 1 1 100%;
+    font-weight: 600;
+    background-color: #3A393A;
+    color: #cccccc;
+}
+
+.ui-dialog {
+    background-color: white!important;
+    padding: 40px 35px;
+    width:auto!important;
+    max-width: 700px;
+    margin: 0 auto;
+    left:0;
+    right: 0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    background-color: white;
+    border: none;
+}
+.ui-dialog .ui-dialog-content {
+    width: auto;
+    padding-top: 0;
+}
+.ui-dialog span.hierarchical_tableinformation_title {
+    font-family: Helvetica;
+    margin: 0;
+    font-size: 22px;
+    margin-top: 0;
+    color: #595959;
+}
+button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+    margin-right: 0!important;
+}
+.tableinformation_container .tableinformation_title{
+    margin: 0;
+}
+.ui-dialog .ui-dialog-titlebar {
+    margin-bottom: 10px;
+}
+
+.commandbar_download_file_dialog.ui-dialog-content.ui-widget-content {
+    height: 400px !important;
+}
+
+#content-wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body, #pxwebcontent, #aspnetForm {
+    height: 100%;
+}
+
+#pxwebcontent #wrap {
+    padding-bottom: 250px;
+}

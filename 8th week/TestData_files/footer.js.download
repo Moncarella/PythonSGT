@@ -1,0 +1,35 @@
+jQuery('document').ready(function() {
+    var langQuery = '';
+
+    if (getCurrentLanguage() == 'en') {
+        langQuery = '?langcode=en';
+        jQuery('#stat-system-text').text('National Statistical System of Latvia');
+        jQuery('#askUsButton').text('Ask us');
+    }
+
+    jQuery.ajax({
+      url: "https://stat.gov.lv/api/pxweb/footer" + langQuery,
+      xhrFields: {
+        withCredentials: true
+      }
+    }).done(function( data ) {
+        for (var i = 0; i < data.length; i++) {
+            var links = jQuery('#footer-skeleton').clone();
+            links.find('h3').text(data[i]._source.label);
+            for (var j = 0; j < data[i]._source.child.length; j++) {
+                child = data[i]._source.child[j]._source;
+                var addUrl = 'https://stat.gov.lv';
+                if (child.link.uri.indexOf('://') > -1) {
+                    addUrl = '';
+                }
+
+                links.find('ul').append('<li><a href="' + addUrl + child.link.uri + '">' + child.label + '</a></li>');
+            }
+
+            links.attr('id', '');
+            links.show();
+
+            jQuery('#footer .footerleft').append(links);
+        }
+    });
+});

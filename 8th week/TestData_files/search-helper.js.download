@@ -1,0 +1,66 @@
+const languageSelector = '#ctl00_cboSelectLanguages';
+const configDir = '/Resources/Scripts/search-helper';
+
+function selectItems(configData, urlParams) {
+  var documentSelects = document.getElementById('PageElements').getElementsByTagName('select');
+  if (urlParams.get('s')) {
+	var searchString = urlParams.get('s').split(" ");
+  }
+  if (urlParams.get('territories')) {
+	var territories = urlParams.get('territories').split(",");
+  }
+
+  for (var i = 0; i < documentSelects.length; i++) {
+    for (var j = 0; j < documentSelects[i].length; j++) {
+      if (urlParams.get('s')) {
+	    // Select by search string.
+	    var stringArray = documentSelects[i][j].label.split(" ");
+	    for (var k = 0; k < stringArray.length; k++) {
+	      if (configData.stop_words.indexOf(stringArray[k].toLowerCase()) > -1) {
+	        continue;
+	      }
+
+	      for (var x = 0; x < searchString.length; x++) {
+	        if (configData.stop_words.indexOf(searchString[x].toLowerCase()) > -1) {
+	          continue;
+	        }
+
+	        try {
+	        	const searchStr = decodeURI(searchString[x]);
+		        if (stringArray[k].toLowerCase().replace(/[^a-zĀ-ž\s]+/gmi, "").indexOf(searchStr.toLowerCase().replace(/[^a-zĀ-ž\s]+/gmi, "")) === 0) {
+		          documentSelects[i][j].selected = true;
+		          //documentSelects[i].onchange();
+		        }
+	        } catch (e) {
+	        	//
+	        }
+	      }
+	    }
+	  }
+
+	  if (urlParams.get('territories')) {
+	    // Select territories.
+	    for (var k = 0; k < territories.length; k++) {
+	      if (documentSelects[i][j].value == territories[k]) {
+	      	documentSelects[i][j].selected = true;
+	       	documentSelects[i].onchange();
+	      }
+		}
+	  }
+    }
+  }
+}
+
+function getCurrentLanguage() {
+  const path = window.location.pathname.split('/');
+  return path[2];
+}
+
+jQuery(document).ready(function () {
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('s') || urlParams.get('territories')) {
+    jQuery.getJSON(configDir + '/' + getCurrentLanguage() + '.search-helper.config.json').done(function( data ) {
+      selectItems(data, urlParams);
+    });
+  }
+});
